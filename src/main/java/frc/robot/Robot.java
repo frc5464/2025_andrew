@@ -29,7 +29,6 @@ public class Robot extends TimedRobot {
   private final Shooter popcornShooter= new Shooter();
   private final ButterClaw butterSubsystem = new ButterClaw();
 
-  private final String gabe = "I am Gabe";
 
   /**
    * This function is run when the robot is first started up and should be used for any
