@@ -6,8 +6,8 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 public class Shooter {
     private SparkFlex shootPopcorn = new SparkFlex(9, MotorType.kBrushless);
 
-    public void shootPopcorn(boolean button9){
-        if(button9){
+    public void shootPopcorn(double rightTrigger){
+        if(rightTrigger > 0.5){
             shootPopcorn.set(1);
         }
         else{

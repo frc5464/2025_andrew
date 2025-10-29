@@ -93,11 +93,11 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
 
-    Drive.drive(driveController.getRawAxis(1), driveController.getRawAxis(5));
-    popcornIntake.intakePopcorn(driveController.getRawButton(1));
-    popcornShooter.shootPopcorn(driveController.getRawButton(4));
-    butterSubsystem.buttering(butterController.getRawButton(6), butterController.getRawButton(5));
-    butterSubsystem.tilting(butterController.getRawAxis(5));
+    Drive.drive(driveController.getRawAxis(1), driveController.getRawAxis(5)); //done
+    popcornIntake.intakePopcorn(driveController.getRawAxis(2)); //done
+    popcornShooter.shootPopcorn(driveController.getRawAxis(3));//done
+    butterSubsystem.buttering(butterController.getRawButton(6), butterController.getRawButton(5)); //done
+    butterSubsystem.tilting(butterController.getRawAxis(5)); //done
   }
 
   @Override

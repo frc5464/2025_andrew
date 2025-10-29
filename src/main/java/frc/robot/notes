@@ -1,0 +1,29 @@
+To do:
+
+Autonomous:
+    making paths
+    importing commands
+    April tag navigation
+
+General code:
+    Controller mapping
+    PID
+    Command based functions
+    Hardware definitions (motors)
+    Map of motors
+    Code organization
+
+Other:
+    Configuring radio
+    CAN ids
+    REV Hardware Client 
+    Working with Phoenix tuner
+    Testing
+    Vision tuning
+
+
+Liam - motor controller, paths, and stuff
+Gabe - hard stuff
+Michael - other hard stuff
+Jakeh - Tuning vision stuff and stuff
+Andrew - Controller implementations and stuff

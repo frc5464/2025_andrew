@@ -7,8 +7,8 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 public class Intake {
     private SparkFlex popcornIntake = new SparkFlex(8, MotorType.kBrushless);
 
-    public void intakePopcorn(boolean button1){
-        if (button1) {
+    public void intakePopcorn(double leftTrigger){
+        if (leftTrigger > 0.5) {
             popcornIntake.set(1);
         }
         else{
