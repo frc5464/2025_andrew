@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
   private final Joystick driveController = new Joystick(0);
   private final Joystick butterController = new Joystick(1);
   // private final Intake popcornIntake = new Intake();
-  private final ShooterSubsystem popcornShooter= new ShooterSubsystem();
+  // private final ShooterSubsystem popcornShooter= new ShooterSubsystem();
   private final ButterClawSubsystem butterSubsystem = new ButterClawSubsystem();
 
 
@@ -98,7 +98,7 @@ public class Robot extends TimedRobot {
     // TimedRobot implementation
     // popcornIntake.intakePopcorn(driveController.getRawAxis(2)); //done
 
-    popcornShooter.shootPopcorn(driveController.getRawAxis(3));//done
+    // popcornShooter.shootPopcorn(driveController.getRawAxis(3));//done
     butterSubsystem.buttering(butterController.getRawButton(6), butterController.getRawButton(5)); //done
     butterSubsystem.tilting(butterController.getRawAxis(5)); //done
   }
