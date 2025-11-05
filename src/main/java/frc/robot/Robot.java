@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.subsystems.ButterClaw;
+import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
-import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
  * the TimedRobot documentation. If you change the name of this class or the package after creating
@@ -25,9 +25,9 @@ public class Robot extends TimedRobot {
   private final DriveTrainSubsystem Drive = new DriveTrainSubsystem();
   private final Joystick driveController = new Joystick(0);
   private final Joystick butterController = new Joystick(1);
-  private final Intake popcornIntake = new Intake();
-  private final Shooter popcornShooter= new Shooter();
-  private final ButterClaw butterSubsystem = new ButterClaw();
+  // private final Intake popcornIntake = new Intake();
+  private final ShooterSubsystem popcornShooter= new ShooterSubsystem();
+  private final ButterClawSubsystem butterSubsystem = new ButterClawSubsystem();
 
 
   /**
@@ -94,7 +94,10 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
 
     Drive.drive(driveController.getRawAxis(1), driveController.getRawAxis(5)); //done
-    popcornIntake.intakePopcorn(driveController.getRawAxis(2)); //done
+
+    // TimedRobot implementation
+    // popcornIntake.intakePopcorn(driveController.getRawAxis(2)); //done
+
     popcornShooter.shootPopcorn(driveController.getRawAxis(3));//done
     butterSubsystem.buttering(butterController.getRawButton(6), butterController.getRawButton(5)); //done
     butterSubsystem.tilting(butterController.getRawAxis(5)); //done

@@ -3,7 +3,7 @@ package frc.robot.subsystems;
 import com.revrobotics.spark.SparkFlex;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 
-public class ButterClaw {
+public class ButterClawSubsystem {
     
     private SparkFlex Butter1 = new SparkFlex(6, MotorType.kBrushless);
     private SparkFlex Butter2 = new SparkFlex(10, MotorType.kBrushless);

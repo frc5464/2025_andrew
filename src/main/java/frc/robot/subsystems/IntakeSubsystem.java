@@ -4,7 +4,7 @@ import com.revrobotics.spark.SparkFlex;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 
-public class Intake {
+public class IntakeSubsystem {
     private SparkFlex popcornIntake = new SparkFlex(8, MotorType.kBrushless);
 
     public void intakePopcorn(double leftTrigger){
