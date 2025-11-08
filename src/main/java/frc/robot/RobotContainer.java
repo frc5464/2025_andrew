@@ -6,9 +6,15 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
+import frc.robot.commands.ButterIntakeCommand;
+import frc.robot.commands.ButterOuttakeCommand;
+import frc.robot.commands.ButterTiltCommand;
+import frc.robot.commands.DriveCommand;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.IntakeCommand;
 import frc.robot.commands.ShooterCommand;
+import frc.robot.subsystems.ButterClawSubsystem;
+import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -27,9 +33,12 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
   private final ShooterSubsystem m_shooterSubsystem = new ShooterSubsystem();
+  private final ButterClawSubsystem m_ButterClawSubsystem = new ButterClawSubsystem();
+  private final DriveTrainSubsystem m_DriveTrainSubsystem = new DriveTrainSubsystem();
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  private final CommandXboxController m_butterController = new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -57,7 +66,10 @@ public class RobotContainer {
 
     m_driverController.axisGreaterThan(2,0.2).whileTrue(new IntakeCommand(m_intakeSubsystem));
     m_driverController.axisGreaterThan(3, 0.2).whileTrue(new ShooterCommand(m_shooterSubsystem));
-    m_driverController.button(6).onTrue(new )
+    m_butterController.button(5).onTrue(new ButterIntakeCommand(m_ButterClawSubsystem));
+    m_butterController.button(6).onTrue(new ButterOuttakeCommand(m_ButterClawSubsystem));
+    m_butterController.axisGreaterThan(5, 0.2).whileTrue(new ButterTiltCommand(m_ButterClawSubsystem));
+    m_driverController.axisGreaterThan(1, 0.2).whileTrue(new DriveCommand(m_DriveTrainSubsystem));
   }
 
   /**

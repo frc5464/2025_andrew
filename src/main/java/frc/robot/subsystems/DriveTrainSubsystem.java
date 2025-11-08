@@ -18,4 +18,10 @@ public void drive(double leftStick, double rightStick){
     backRight.set(rightStick/2);
     backLeft.set(leftStick/2);
 }
+public void stop(){
+    frontRight.set(0);
+    frontLeft.set(0);
+    backRight.set(0);
+    backLeft.set(0);
+}
 }
