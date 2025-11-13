@@ -1,5 +1,6 @@
 To do:
-
+ //change motor power-increase
+      //invert half of motors - done
 Autonomous:
     making paths
     importing commands

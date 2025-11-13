@@ -31,14 +31,12 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
-  private final ShooterSubsystem m_shooterSubsystem = new ShooterSubsystem();
-  private final ButterClawSubsystem m_ButterClawSubsystem = new ButterClawSubsystem();
-  private final DriveTrainSubsystem m_DriveTrainSubsystem = new DriveTrainSubsystem();
+  
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
-  private final CommandXboxController m_butterController = new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  private final CommandXboxController m_butterController =
+      new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -62,14 +60,7 @@ public class RobotContainer {
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
-
-    m_driverController.axisGreaterThan(2,0.2).whileTrue(new IntakeCommand(m_intakeSubsystem));
-    m_driverController.axisGreaterThan(3, 0.2).whileTrue(new ShooterCommand(m_shooterSubsystem));
-    m_butterController.button(5).onTrue(new ButterIntakeCommand(m_ButterClawSubsystem));
-    m_butterController.button(6).onTrue(new ButterOuttakeCommand(m_ButterClawSubsystem));
-    m_butterController.axisGreaterThan(5, 0.2).whileTrue(new ButterTiltCommand(m_ButterClawSubsystem));
-    m_driverController.axisGreaterThan(1, 0.2).whileTrue(new DriveCommand(m_DriveTrainSubsystem));
+    
   }
 
   /**

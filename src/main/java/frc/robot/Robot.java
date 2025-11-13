@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.OI.OperatorInterface;
 import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -17,14 +19,16 @@ import frc.robot.subsystems.ShooterSubsystem;
  * the TimedRobot documentation. If you change the name of this class or the package after creating
  * this project, you must also update the Main.java file in the project.
  */
+import frc.robot.utils.SubsystemManager;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+  private SubsystemManager subsystemManager;
 
   private final RobotContainer m_robotContainer;
 
-  private final DriveTrainSubsystem Drive = new DriveTrainSubsystem();
-  private final Joystick driveController = new Joystick(0);
-  private final Joystick butterController = new Joystick(1);
+  // private final DriveTrainSubsystem Drive = new DriveTrainSubsystem();
+  // private final Joystick driveController = new Joystick(0);
+  // private final Joystick butterController = new Joystick(1);
   // private final Intake popcornIntake = new Intake();
   // private final ShooterSubsystem popcornShooter= new ShooterSubsystem();
   // private final ButterClawSubsystem butterSubsystem = new ButterClawSubsystem();
@@ -38,6 +42,11 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+
+    subsystemManager = new SubsystemManager();
+
+    OperatorInterface.create(subsystemManager);
+ 
   }
 
   /**
@@ -93,7 +102,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
 
-    Drive.drive(driveController.getRawAxis(1), driveController.getRawAxis(5)); //done
+    // Drive.drive(driveController.getRawAxis(1), driveController.getRawAxis(5)); //done
 
     // TimedRobot implementation
     // popcornIntake.intakePopcorn(driveController.getRawAxis(2)); //done
