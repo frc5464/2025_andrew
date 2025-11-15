@@ -15,6 +15,7 @@ import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.subsystems.VisionSubsystem;
 import frc.robot.utils.CommandFactory;
 import frc.robot.utils.SubsystemManager;
 import frc.robot.Gyro;
@@ -56,6 +57,10 @@ public class Autos{
 
   Gyro gyro = new Gyro();
   DriveTrainSubsystem drivetrain = new DriveTrainSubsystem();
+  IntakeSubsystem intake = new IntakeSubsystem();
+  ShooterSubsystem shoot = new ShooterSubsystem();
+  ButterClawSubsystem butterclaw = new ButterClawSubsystem();
+  VisionSubsystem vision = new VisionSubsystem();
 
     public Autos(SubsystemManager subsystemManager, CommandFactory commandFactory){
         //Subsystems
@@ -153,7 +158,7 @@ public class Autos{
       drivetrain.drive(yawWeDoBeUsing, rotate);/*(0, 0, rotate * 0.5);*/
     //   elevator.setElevatorPosition("Drive");
     } else if (autoTimer.get() > 3) {
-      drivetrain.Move(0, 0, 0);
+      drivetrain.drive(0, 0);
       autoTimer.stop();
       autoTimer.reset();
       autoTimer.start();
@@ -170,9 +175,9 @@ public class Autos{
         case kLeft:
         double rotate = drivetrain.SnapToAngle(gyro.Yaw, -177);
         if (autoTimer.get() < 2) {
-          drive.Move(0, 0, rotate * 0.4);
+          drive.drive(0, rotate * 0.4);
         } else if (autoTimer.get() > 2) {
-          drivetrain.Move(0, 0, 0);
+          drivetrain.drive(0, 0);
           autoTimer.stop();
           autoTimer.reset();
           autoStep++;
@@ -181,9 +186,9 @@ public class Autos{
       case kRight:
         double roll = drivetrain.SnapToAngle(gyro.Yaw, 177);
         if (autoTimer.get() < 2) {
-          drivetrain.Move(0, 0, roll * 0.3);
+          drivetrain.drive(0, roll * 0.3);
         } else if (autoTimer.get() > 2) {
-          drivetrain.Move(0, 0, 0);
+          drivetrain.drive(0, 0);
           autoTimer.stop();
           autoTimer.reset();
           autoTimer.start();
@@ -199,13 +204,13 @@ public class Autos{
 
   public void IntakeRun(){
     if (autoTimer.get() < 0.3) {
-      drivetrain.Move(0.3, 0, 0);
+      drivetrain.drive(0.3, 0);
     }
   }
 
   public void OneSecDelay() {
     // if(autoTimer.get() < 1){
-    // drivetrain.Move(0, 0, 0);
+    // drivetrain.drive(0, 0, 0);
     // }
     // else if(autoTimer.get() > 1){
     // autoTimer.stop();
@@ -220,9 +225,9 @@ public class Autos{
     elevator.setElevatorPosition("Drive");
     double rotate = drivetrain.SnapToAngle(gyro.Yaw, 0);
     if (autoTimer.get() < 1) {
-      drivetrain.Move(0, 0, rotate);
+      drivetrain.drive(0, rotate);
     } else if (autoTimer.get() > 1) {
-      drivetrain.Move(0, 0, 0);
+      drivetrain.drive(0, 0);
       autoTimer.stop();
       autoTimer.reset();
       autoTimer.start();
@@ -242,7 +247,7 @@ public class Autos{
   }
 
   public void Generic_Backup() {
-    drivetrain.Move(-0.3, 0, 0);
+    drivetrain.drive(-0.3, 0);
     if (drivetrain.frontleftrotations < -68.0) {
       TargetYaw = gyro.Yaw;
       autoStep++;
@@ -283,7 +288,7 @@ public class Autos{
       case 9:
         break;
       default:
-        drivetrain.Move(0, 0, 0);
+        drivetrain.drive(0, 0);
     }
   }
 
