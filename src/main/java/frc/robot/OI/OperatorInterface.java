@@ -11,6 +11,7 @@ import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.utils.CommandFactory;
 import frc.robot.utils.SubsystemManager;
 
 public class OperatorInterface {
@@ -23,7 +24,7 @@ public class OperatorInterface {
      * 
      * @param subsystemManager
      * */
-    public static void create(SubsystemManager subsystemManager){
+    public static void create(SubsystemManager subsystemManager, CommandFactory commandFactory){
         final IntakeSubsystem intake = subsystemManager.getIntakeSubsystem();
         final ShooterSubsystem shooter = subsystemManager.getShooterSubsystem();
         final ButterClawSubsystem butter = subsystemManager.getButterClawSubsystem();
