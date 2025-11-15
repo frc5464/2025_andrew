@@ -14,6 +14,7 @@ import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.utils.CommandFactory;
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
  * the TimedRobot documentation. If you change the name of this class or the package after creating
@@ -23,6 +24,7 @@ import frc.robot.utils.SubsystemManager;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private SubsystemManager subsystemManager;
+  private CommandFactory commandFactory;
 
   private final RobotContainer m_robotContainer;
 
@@ -44,8 +46,9 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
 
     subsystemManager = new SubsystemManager();
+    commandFactory = new CommandFactory();
 
-    OperatorInterface.create(subsystemManager);
+    OperatorInterface.create(subsystemManager, commandFactory);
  
   }
 
