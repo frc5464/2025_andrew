@@ -1,0 +1,47 @@
+package frc.robot;
+
+import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+public class Gyro {
+    // ============================================== Public Variables
+    // What we want the rest of the robot to know
+
+
+    // ============================================== Private Variables
+    // What the rest of the robot does nokhkt care about
+    // AHRS navx = new AHRS();
+    
+    public double Yaw;
+    public double Pitch;
+    public Rotation2d Angle;
+    public double RawX;
+
+    // ============================================= Public Functions
+    public void Init(){
+        // put one-time setup steps here
+
+    }
+
+    public void UpdateGyro(){
+        // Yaw = navx.getYaw();
+        // Pitch = navx.getPitch();
+        // Angle = navx.getRotation2d();
+        // RawX = navx.getRawGyroX();
+    }
+
+    // Corrects slow drift of the gyro. Shoudn't be necessary during matches
+    public void ResetGyro(){
+        // navx.reset();
+    }
+
+    public void DisplayStats(){
+        // SmartDashboard.putNumber("Yaw", navx.getYaw());
+        // SmartDashboard.putNumber("Roll", navx.getRoll());
+        // SmartDashboard.putNumber("Pitch", navx.getPitch());   
+    }
+    // ============================================= Private Functions
+         
+}
+    
+

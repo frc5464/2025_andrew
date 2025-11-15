@@ -17,6 +17,7 @@ import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.utils.CommandFactory;
 import frc.robot.utils.SubsystemManager;
+import frc.robot.Gyro;
 
 //Move forward
 //shoot popcorn
@@ -52,6 +53,9 @@ public class Autos{
 
   double TargetYaw = 0;
   public int autoStep = 0;
+
+  Gyro gyro = new Gyro();
+  DriveTrainSubsystem drivetrain = new DriveTrainSubsystem();
 
     public Autos(SubsystemManager subsystemManager, CommandFactory commandFactory){
         //Subsystems
@@ -146,8 +150,8 @@ public class Autos{
 
     double rotate = drivetrain.SnapToAngle(yawWeDoBeUsing, 180);
     if (autoTimer.get() < 3) {
-      drivetrain.Move(0, 0, rotate * 0.5);
-      elevator.setElevatorPosition("Drive");
+      drivetrain.drive(yawWeDoBeUsing, rotate);/*(0, 0, rotate * 0.5);*/
+    //   elevator.setElevatorPosition("Drive");
     } else if (autoTimer.get() > 3) {
       drivetrain.Move(0, 0, 0);
       autoTimer.stop();
