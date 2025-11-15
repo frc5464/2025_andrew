@@ -5,7 +5,7 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
+import frc.robot.commands.AutosCommand;
 import frc.robot.commands.ButterIntakeCommand;
 import frc.robot.commands.ButterOuttakeCommand;
 import frc.robot.commands.ButterTiltCommand;
@@ -70,6 +70,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    return AutosCommand.exampleAuto(m_exampleSubsystem);
   }
 }
