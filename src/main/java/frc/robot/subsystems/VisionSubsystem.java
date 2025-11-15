@@ -13,18 +13,18 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class VisionSubsystem {
 
     PhotonCamera aprilTagCamera = new PhotonCamera("AprilTagCamera");
-    
+    public boolean butterVisible = false;
+    public double  butterYaweDoBeUsin = 0.0;
+    public double  butterPitch = 0.0;
+    public boolean popcornVisible = false;
+    public double popcornYaw = 0.0;
+    public double popcornPitch = 0.0;
+    public boolean storeroomVisible = false;
+    public double storeroomYaw = 0.0;
+    public double storeroomPitch = 0.0;
     public void periodic(){
         var results = aprilTagCamera.getAllUnreadResults();
-        boolean butterVisible = false;
-        double  butterYaw = 0.0;
-        double  butterPitch = 0.0;
-        boolean popcornVisible = false;
-        double popcornYaw = 0.0;
-        double popcornPitch = 0.0;
-        boolean storeroomVisible = false;
-        double storeroomYaw = 0.0;
-        double storeroomPitch = 0.0;
+        
         if(!results.isEmpty()){
             var result = results.get(results.size() - 1);
             if(result.hasTargets()) {
@@ -32,7 +32,7 @@ public class VisionSubsystem {
                     // Butter Apriltags
                     if(target.getFiducialId() == 3 || target.getFiducialId() == 8) {
                         
-                        butterYaw = target.getYaw();
+                        butterYaweDoBeUsin = target.getYaw();
                         butterPitch = target.getPitch();
                         butterVisible = true;
                     } 
