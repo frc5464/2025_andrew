@@ -55,7 +55,7 @@ public class DriveTrainSubsystem extends SubsystemBase{
     }
 
     public void drivePeriodic(){
-        frontLeft.set((drivePID.calculate(leftRelativeEncoder * 11.7, targetAngle)) * maxPower);
+        // frontLeft.set((drivePID.calculate(leftRelativeEncoder * 11.7, targetAngle)) * maxPower);
     }
 
     public void drive(double leftStick, double rightStick){
@@ -87,10 +87,10 @@ public class DriveTrainSubsystem extends SubsystemBase{
 
     public void Init(){
     // put one-time setup steps here
-    frontLeft.setOpenLoopRampRate(rampRate);
-    frontRight.setOpenLoopRampRate(rampRate);
-    backLeft.setOpenLoopRampRate(rampRate);
-    backRight.setOpenLoopRampRate(rampRate);      
+    // frontLeft.setOpenLoopRampRate(rampRate);
+    // frontRight.setOpenLoopRampRate(rampRate);
+    // backLeft.setOpenLoopRampRate(rampRate);
+    // backRight.setOpenLoopRampRate(rampRate);      
     
     frontlefRelativeEncoder = frontLeft.getEncoder();
     frontrightRelativeEncoder = frontRight.getEncoder();

@@ -170,33 +170,33 @@ public class Autos{
     autoStep++;
   }
 
-  public void spinToButter(){
-    switch (autoDirectionSelected) {
-        case kLeft:
-        double rotate = drivetrain.SnapToAngle(gyro.Yaw, -177);
-        if (autoTimer.get() < 2) {
-          drive.drive(0, rotate * 0.4);
-        } else if (autoTimer.get() > 2) {
-          drivetrain.drive(0, 0);
-          autoTimer.stop();
-          autoTimer.reset();
-          autoStep++;
-        }
-        break;
-      case kRight:
-        double roll = drivetrain.SnapToAngle(gyro.Yaw, 177);
-        if (autoTimer.get() < 2) {
-          drivetrain.drive(0, roll * 0.3);
-        } else if (autoTimer.get() > 2) {
-          drivetrain.drive(0, 0);
-          autoTimer.stop();
-          autoTimer.reset();
-          autoTimer.start();
-          autoStep++;
-        }
-        break;  
-    }
-  }
+  // public void spinToButter(){
+  //   // switch (autoDirectionSelected) {
+  //       // case kButterPickupk:
+  //       double rotate = drivetrain.SnapToAngle(gyro.Yaw, -177);
+  //       if (autoTimer.get() < 2) {
+  //         drivetrain.drive(0, rotate * 0.4);
+  //       } else if (autoTimer.get() > 2) {
+  //         drivetrain.drive(0, 0);
+  //         autoTimer.stop();
+  //         autoTimer.reset();
+  //         autoStep++;
+  //       }
+  //       break;
+  //     // case kRight:
+  //       double roll = drivetrain.SnapToAngle(gyro.Yaw, 177);
+  //       if (autoTimer.get() < 2) {
+  //         drivetrain.drive(0, roll * 0.3);
+  //       } else if (autoTimer.get() > 2) {
+  //         drivetrain.drive(0, 0);
+  //         autoTimer.stop();
+  //         autoTimer.reset();
+  //         autoTimer.start();
+  //         autoStep++;
+  //       }
+  //       break;  
+  //   // }
+  // }
 
   public void ButterDetect(){
     autoStep++;
@@ -222,7 +222,7 @@ public class Autos{
   }
 
   public void Spin0Gyro() {
-    elevator.setElevatorPosition("Drive");
+    // elevator.setElevatorPosition("Drive");
     double rotate = drivetrain.SnapToAngle(gyro.Yaw, 0);
     if (autoTimer.get() < 1) {
       drivetrain.drive(0, rotate);
@@ -237,7 +237,7 @@ public class Autos{
 
   public void ScoreButter() {
     if (autoTimer.get() < 1) {
-      intake.InConeOutCubeRun();
+      // intake.InConeOutCubeRun();
     } else {
       autoTimer.stop();
       autoTimer.reset();
@@ -270,21 +270,21 @@ public class Autos{
       case 3:
         EscapePrep();
         break;
-      case 4:
-        TokyoEscape();
-        break;
-      case 5:
-        TokyoDrift();
-        break;
-      case 6:
-        Arrival();
-        break;
-      case 7:
-        Gunit();
-        break;
-      case 8:
-        Balance();
-        break;
+      // case 4:
+      //   TokyoEscape();
+      //   break;
+      // case 5:
+      //   TokyoDrift();
+      //   break;
+      // case 6:
+      //   Arrival();
+      //   break;
+      // case 7:
+      //   Gunit();
+      //   break;
+      // case 8:
+      //   Balance();
+      //   break;
       case 9:
         break;
       default:
@@ -340,15 +340,15 @@ public class Autos{
       case 2:
         Score();
         break;
-      case 3:
-        PickupEscape();
-        break;
+      // case 3:
+      //   PickupEscape();
+      //   break;
       case 4:
         StartautoTimer();
         break;
-      case 5:
-        spinToButter();
-        break;
+      // case 5:
+      //   spinToButter();
+      //   break;
       case 6:
         StartautoTimer();
         break;
@@ -360,9 +360,9 @@ public class Autos{
         // SweepSnap();
         autoStep++;
         break;
-      case 9:
-        AutoSetCube();
-        break;
+      // case 9:
+      //   AutoSetCube();
+      //   break;
       case 10:
         IntakeRun();
         break;
@@ -396,33 +396,33 @@ public class Autos{
 
     switch (m_autoSelected) {
 
-        case kTokyoDrift:
-          AutoTokyoDrift();
-          break;
+        // case kTokyoDrift:
+        //   AutoTokyoDrift();
+        //   break;
   
-        case kHitchRoute:
-          AutoHitchRoute();
-          break;
+        // case kHitchRoute:
+        //   AutoHitchRoute();
+        //   break;
   
-        case kSideScore:
-          AutoSideScore();
-          break;
+        // case kSideScore:
+        //   AutoSideScore();
+        //   break;
   
-        case kMiddleScore:
-          AutoMiddleScore();
-          break;
+        // case kMiddleScore:
+        //   AutoMiddleScore();
+        //   break;
   
         // case kDefaultAuto:
         // AutoDefault();
         // break;
   
-        case kScoreOnly:
-          AutoScoreOnly();
-          break;
+        // case kScoreOnly:
+        //   AutoScoreOnly();
+        //   break;
         
-        case kScorePickup:
-          AutoScorePickup();
-          break;
+        // case kScorePickup:
+        //   AutoScorePickup();
+        //   break;
   
         default:
           AutoDefault();
