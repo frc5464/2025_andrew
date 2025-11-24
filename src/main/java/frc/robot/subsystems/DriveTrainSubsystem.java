@@ -68,19 +68,31 @@ public class DriveTrainSubsystem extends SubsystemBase{
     // }
 
     public void driveTeleopPeriodic(double driveStick, double turnStick){
-        double speed = -joy1.getRawAxis(1)*0.6;
-        double turn = joy1.getRawAxis(4)*0.3;
-        double left = speed + turn;
-        double right = speed -turn;
-        // frontLeft.set(driveStick/*/2*/);
-        // backLeft.set(driveStick/*/2*/);
-        // frontRight.set(-turnStick/*/2*/);
-        // backRight.set(-turnStick/*/2*/);
-        frontLeft.set(left);
-        backLeft.set(left);
-        frontRight.set(-right);
-        backRight.set(-right);
+        // driveStick = -joy1.getRawAxis(1)*0.6;
+        // turnStick = joy1.getRawAxis(4)*0.3;
+        // double left = speed + turn;
+        // double right = speed -turn;
+
+        //Should drive forward and back
+        frontLeft.set(driveStick/*/2*/);
+        backLeft.set(driveStick/*/2*/);
+        frontRight.set(-driveStick/*/2*/);
+        backRight.set(-driveStick/*/2*/);
+
+        //Should turn in place
+        if (turnStick > 0.1 || turnStick < -0.1) {
+            frontLeft.set(turnStick);
+            backLeft.set(turnStick);
+            frontRight.set(turnStick);
+            backRight.set(turnStick);
+        }
+        // frontLeft.set(left);
+        // backLeft.set(left);
+        // frontRight.set(-right);
+        // backRight.set(-right);
     }
+
+
     public void stop(){
         frontRight.set(0);
         frontLeft.set(0);
