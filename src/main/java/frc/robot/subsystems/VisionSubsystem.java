@@ -7,10 +7,15 @@ import java.util.List;
 import org.photonvision.PhotonCamera;
 import org.photonvision.targeting.PhotonPipelineResult;
 
+import edu.wpi.first.apriltag.AprilTagFieldLayout;
+import edu.wpi.first.apriltag.AprilTagFields;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class VisionSubsystem {
+
+    public static final AprilTagFieldLayout fieldLayout = AprilTagFieldLayout.loadField(
+    AprilTagFields.k2025ReefscapeAndyMark);
 
     PhotonCamera aprilTagCamera = new PhotonCamera("AprilTagCamera");
     public boolean butterVisible = false;

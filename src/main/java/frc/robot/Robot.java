@@ -21,11 +21,12 @@ import frc.robot.utils.CommandFactory;
  * this project, you must also update the Main.java file in the project.
  */
 import frc.robot.utils.SubsystemManager;
+import frc.robot.utils.Universals;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private SubsystemManager subsystemManager;
   private CommandFactory commandFactory;
-
+  private Universals universals;
   private final RobotContainer m_robotContainer;
 
   // private final DriveTrainSubsystem Drive = new DriveTrainSubsystem();
@@ -47,6 +48,7 @@ public class Robot extends TimedRobot {
 
     subsystemManager = new SubsystemManager();
     commandFactory = new CommandFactory();
+    
 
     OperatorInterface.create(subsystemManager, commandFactory);
  
@@ -84,6 +86,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
+
+    Universals.autonomousActive = true;
   }
 
   /** This function is called periodically during autonomous. */
@@ -99,6 +103,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+
+    Universals.autonomousActive = false;
   }
 
   /** This function is called periodically during operator control. */
