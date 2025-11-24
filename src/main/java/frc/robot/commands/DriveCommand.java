@@ -29,7 +29,7 @@ public class DriveCommand extends Command{
       // double rightDrive = joytick1.getRawAxis(5);
       // if(Math.abs(leftDrive) < 0.2){leftDrive = 0;}
       // if(Math.abs(rightDrive) < 0.2){rightDrive = 0;}
-      driveTrain_subsystem.driveTeleopPeriodic(speed, turn);
+      driveTrain_subsystem.driveTeleopPeriodic(left, right);
     }
   
     // Called once the command ends or is interrupted.

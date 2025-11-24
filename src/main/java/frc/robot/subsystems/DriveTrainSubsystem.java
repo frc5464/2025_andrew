@@ -57,9 +57,9 @@ public class DriveTrainSubsystem extends SubsystemBase{
     Joystick joy1 = new Joystick(0);
 
     public DriveTrainSubsystem(){
-    drivePID = new PIDController(kp, ki, kd);
-    leftRelativeEncoder = frontLeft.getEncoder();
-    rightRelativeEncoder = frontRight.getEncoder();
+    // drivePID = new PIDController(kp, ki, kd);
+    // leftRelativeEncoder = frontLeft.getEncoder();
+    // rightRelativeEncoder = frontRight.getEncoder();
     
     }
 
