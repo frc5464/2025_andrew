@@ -82,19 +82,19 @@ public class DriveTrainSubsystem extends SubsystemBase{
         backLeft.set(0);
     }
 
-    public void MoveFieldOriented(double x,double y,double rot, Rotation2d gyroAngle){
+    // public void MoveFieldOriented(double x,double y,double rot, Rotation2d gyroAngle){
 
-        // drivetrain.arcadeDrive(x, rot);
+    //     // drivetrain.arcadeDrive(x, rot);
         
-    }
+    // }
     
-    public double SnapToAngle(double currentAngle, double targetAngle){
-        // Calculates the output of the PID algorithm based on the sensor reading
-        // and sends it to the drivetrain
-        double turnVal = angleSnapPidController.calculate(currentAngle, targetAngle);
+    // public double SnapToAngle(double currentAngle, double targetAngle){
+    //     // Calculates the output of the PID algorithm based on the sensor reading
+    //     // and sends it to the drivetrain
+    //     double turnVal = angleSnapPidController.calculate(currentAngle, targetAngle);
         
-        return turnVal;
-    }
+    //     return turnVal;
+    // }
 
     public void Init(){
     // put one-time setup steps here
