@@ -21,15 +21,15 @@ public class DriveCommand extends Command{
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-      double speed = joytick1.getRawAxis(1) * 0.6;
+      double speed = -joytick1.getRawAxis(1) * 0.6;
       double turn = joytick1.getRawAxis(4) * 0.3;
 
-      double left = speed + turn;
-      double right = speed - turn;
+      // double left = speed + turn;
+      // double right = speed - turn;
       // double rightDrive = joytick1.getRawAxis(5);
       // if(Math.abs(leftDrive) < 0.2){leftDrive = 0;}
       // if(Math.abs(rightDrive) < 0.2){rightDrive = 0;}
-      driveTrain_subsystem.driveTeleopPeriodic(left, right);
+      driveTrain_subsystem.driveTeleopPeriodic(speed, turn);
     }
   
     // Called once the command ends or is interrupted.
