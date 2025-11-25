@@ -9,6 +9,7 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.OI.OperatorInterface;
@@ -16,7 +17,8 @@ import frc.robot.OI.OperatorInterface;
 public class DriveTrainSubsystem extends SubsystemBase{
     // private DifferentialDrive tank;
     PIDController drivePID;
-    
+    private final Field2d field = new Field2d();
+
     private SparkMax frontRight = new SparkMax(2, MotorType.kBrushless); 
     private SparkMax frontLeft = new SparkMax(3, MotorType.kBrushless); 
     private SparkMax backLeft = new SparkMax(4, MotorType.kBrushless); 
@@ -60,7 +62,11 @@ public class DriveTrainSubsystem extends SubsystemBase{
     // drivePID = new PIDController(kp, ki, kd);
     // leftRelativeEncoder = frontLeft.getEncoder();
     // rightRelativeEncoder = frontRight.getEncoder();
-    
+    SmartDashboard.putData("field", field);
+    // if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.POSE.ordinal())
+    // {
+    //   SmartDashboard.putData("Field", field);
+    // }
     }
 
     // public void drivePeriodic(){

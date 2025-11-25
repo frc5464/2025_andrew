@@ -9,11 +9,13 @@ import org.photonvision.targeting.PhotonPipelineResult;
 
 import edu.wpi.first.apriltag.AprilTagFieldLayout;
 import edu.wpi.first.apriltag.AprilTagFields;
+import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class VisionSubsystem {
 
+    Pose2d pose2d = new Pose2d();
     public static final AprilTagFieldLayout fieldLayout = AprilTagFieldLayout.loadField(
     AprilTagFields.k2025ReefscapeAndyMark);
 
