@@ -35,7 +35,8 @@ public class OperatorInterface {
         
         driver.axisGreaterThan(2,0.2).whileTrue(new IntakeCommand(intake));
         driver.axisGreaterThan(3, 0.2).whileTrue(new ShooterCommand(shooter));
-        driver.button(2).onTrue(new ReverseDrivecommand(drive, driver));
+        driver.button(2).onTrue(new ReverseDrivecommand());
+        drive.setDefaultCommand(new ReverseDrivecommand());
         drive.setDefaultCommand(new DriveCommand(drive, driver));
     
         //butter controller

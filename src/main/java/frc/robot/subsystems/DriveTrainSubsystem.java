@@ -97,6 +97,9 @@ public class DriveTrainSubsystem extends SubsystemBase{
         // frontRight.set(-right);
         // backRight.set(-right);
     }
+    public void reverseDrive(double revDrive, double revTurn){
+        driveTeleopPeriodic(-revDrive, -revTurn);
+    }
 
 
     public void stop(){
