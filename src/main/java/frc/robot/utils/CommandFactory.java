@@ -2,6 +2,7 @@ package frc.robot.utils;
 
 import static edu.wpi.first.units.Units.Newton;
 
+import frc.robot.commands.AllignToAprilTagCommand;
 import frc.robot.commands.ButterIntakeCommand;
 import frc.robot.commands.ButterOuttakeCommand;
 import frc.robot.commands.ButterTiltCommand;
@@ -18,6 +19,7 @@ public class CommandFactory {
     private final ButterIntakeCommand butterIntakeCommand = new ButterIntakeCommand(null);
     private final ButterOuttakeCommand butterOuttakeCommand = new ButterOuttakeCommand(null);
     private final ButterTiltCommand butterTiltCommand = new ButterTiltCommand(null);
+    private final AllignToAprilTagCommand allignToAprilTagCommand = new AllignToAprilTagCommand(null, null);
 
     public CommandFactory(){
 
@@ -49,5 +51,9 @@ public class CommandFactory {
 
     public ButterTiltCommand getButterTiltCommand(){
         return butterTiltCommand;
+    }
+
+    public AllignToAprilTagCommand getAllignToAprilTagCommand(){
+        return allignToAprilTagCommand;
     }
 }
