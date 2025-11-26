@@ -19,7 +19,24 @@ public class AllignToAprilTagCommand extends Command{
 
     @Override
     public void execute(){
-        
+
+        // Jake example:
+            // if(eyes.butterVisible){
+            //     // Scale to make the drive slower
+            //     double yawScale = 100;               
+            //     // Larger yawScale = slower homing. Big yaw?? Go fast!
+            //     // As we approach zero, it slows down.
+            //     // Negative yaw means we need to turn left (Right positive, left negative)
+            //     wheelchair.driveTeleopPeriodic(eyes.butterYaweDoBeUsin/yawScale,
+            //                                    -eyes.butterYaweDoBeUsin/yawScale);
+
+            //     /* Yaw = -10
+            //      * We need to turn left!
+            //      * Drive command needs to give ()
+            //      * 
+            //      */
+            // }
+            
             if(eyes.butterVisible == true && eyes.butterYaweDoBeUsin < 0){
                 wheelchair.driveTeleop(.5, -0.5);
             } else if(eyes.butterYaweDoBeUsin > 0){
