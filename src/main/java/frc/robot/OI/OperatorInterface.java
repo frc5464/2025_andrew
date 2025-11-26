@@ -6,7 +6,8 @@ import frc.robot.commands.ButterOuttakeCommand;
 import frc.robot.commands.ButterTiltCommand;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IntakeCommand;
-import frc.robot.commands.ReverseDrivecommand;
+import frc.robot.commands.ReverseDriveCommand;
+import frc.robot.commands.ReverseDriveModeCommand;
 import frc.robot.commands.ShooterCommand;
 import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -35,8 +36,8 @@ public class OperatorInterface {
         
         driver.axisGreaterThan(2,0.2).whileTrue(new IntakeCommand(intake));
         driver.axisGreaterThan(3, 0.2).whileTrue(new ShooterCommand(shooter));
-        driver.button(2).onTrue(new ReverseDrivecommand());
-        drive.setDefaultCommand(new ReverseDrivecommand());
+        driver.button(2).onTrue(new ReverseDriveModeCommand());
+        drive.setDefaultCommand(new ReverseDriveCommand(drive));
         drive.setDefaultCommand(new DriveCommand(drive, driver));
     
         //butter controller

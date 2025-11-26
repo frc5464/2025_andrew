@@ -8,14 +8,14 @@ import frc.robot.commands.ButterOuttakeCommand;
 import frc.robot.commands.ButterTiltCommand;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IntakeCommand;
-import frc.robot.commands.ReverseDriveModecommand;
-import frc.robot.commands.ReverseDrivecommand;
+import frc.robot.commands.ReverseDriveModeCommand;
+import frc.robot.commands.ReverseDriveCommand;
 import frc.robot.commands.ShooterCommand;
 
 public class CommandFactory {
     private final DriveCommand driveCommand = new DriveCommand(null, null);
-    private final ReverseDrivecommand reverseDriveCommand = new ReverseDrivecommand();
-    private final ReverseDriveModecommand reverseDriveModeCommand = new ReverseDriveModecommand();
+    private final ReverseDriveCommand reverseDriveCommand = new ReverseDriveCommand(null);
+    private final ReverseDriveModeCommand reverseDriveModeCommand = new ReverseDriveModeCommand();
     private final IntakeCommand intakeCommand = new IntakeCommand(null);
     private final ShooterCommand shooterCommand = new ShooterCommand(null);
     private final ButterIntakeCommand butterIntakeCommand = new ButterIntakeCommand(null);
@@ -31,11 +31,11 @@ public class CommandFactory {
        return driveCommand;
     }
 
-    public ReverseDrivecommand getReverseDriveCommand(){
+    public ReverseDriveCommand getReverseDriveCommand(){
        return reverseDriveCommand;
     }
 
-    public ReverseDriveModecommand getReverseDriveModeCommand(){
+    public ReverseDriveModeCommand getReverseDriveModeCommand(){
         return reverseDriveModeCommand;
     }
 

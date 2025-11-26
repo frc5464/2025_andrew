@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.utils.Universals;
 
-public class ReverseDriveModecommand extends Command{
+public class ReverseDriveModeCommand extends Command{
     @Override
     public void initialize() {
         Universals.reverseMode = true;
