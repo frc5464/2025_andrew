@@ -13,7 +13,7 @@ import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class VisionSubsystem {
+public class VisionSubsystem extends SubsystemBase{
 
     Pose2d pose2d = new Pose2d();
     public static final AprilTagFieldLayout fieldLayout = AprilTagFieldLayout.loadField(
