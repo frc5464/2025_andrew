@@ -73,32 +73,38 @@ public class DriveTrainSubsystem extends SubsystemBase{
     //     // frontLeft.set((drivePID.calculate(leftRelativeEncoder * 11.7, targetAngle)) * maxPower);
     // }
 
-    public void driveTeleopPeriodic(double driveStick, double turnStick){
-        // driveStick = -joy1.getRawAxis(1)*0.6;
-        // turnStick = joy1.getRawAxis(4)*0.3;
-        // double left = speed + turn;
-        // double right = speed -turn;
-
-        //Should drive forward and back
-        frontLeft.set(driveStick/*/2*/);
-        backLeft.set(driveStick/*/2*/);
-        frontRight.set(-driveStick/*/2*/);
-        backRight.set(-driveStick/*/2*/);
-
-        //Should turn in place
-        if (turnStick > 0.1 || turnStick < -0.1) {
-            frontLeft.set(turnStick);
-            backLeft.set(turnStick);
-            frontRight.set(turnStick);
-            backRight.set(turnStick);
-        }
-        // frontLeft.set(left);
-        // backLeft.set(left);
-        // frontRight.set(-right);
-        // backRight.set(-right);
+    public void driveTeleop(double leftStick, double rightStick){
+        frontRight.set(-rightStick/2);
+        frontLeft.set(leftStick/2);
+        backRight.set(-rightStick/2);
+        backLeft.set(leftStick/2);
     }
-    public void reverseDrive(double revDrive, double revTurn){
-        driveTeleopPeriodic(-revDrive, -revTurn);
+    // public void driveTeleopPeriodic(double driveStick, double turnStick){
+    //     // driveStick = -joy1.getRawAxis(1)*0.6;
+    //     // turnStick = joy1.getRawAxis(4)*0.3;
+    //     // double left = speed + turn;
+    //     // double right = speed -turn;
+
+    //     //Should drive forward and back
+    //     frontLeft.set(driveStick/*/2*/);
+    //     backLeft.set(driveStick/*/2*/);
+    //     frontRight.set(-driveStick/*/2*/);
+    //     backRight.set(-driveStick/*/2*/);
+
+    //     //Should turn in place
+    //     if (turnStick > 0.1 || turnStick < -0.1) {
+    //         frontLeft.set(turnStick);
+    //         backLeft.set(turnStick);
+    //         frontRight.set(turnStick);
+    //         backRight.set(turnStick);
+    //     }
+    //     // frontLeft.set(left);
+    //     // backLeft.set(left);
+    //     // frontRight.set(-right);
+    //     // backRight.set(-right);
+    // }
+    public void reverseDrive(double revLeft, double revRight){
+        driveTeleop(-revLeft, -revRight);
     }
 
 

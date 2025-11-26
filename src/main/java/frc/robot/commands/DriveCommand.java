@@ -6,14 +6,14 @@ import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.utils.Universals;
 
 public class DriveCommand extends Command{
-    DriveTrainSubsystem driveTrain_subsystem;
+    DriveTrainSubsystem driveTrain;
     CommandJoystick joytick1;
     // Boolean autonomous = false;
 
-    public DriveCommand(DriveTrainSubsystem drive, CommandJoystick jostick){
-        driveTrain_subsystem = drive;
-        joytick1 = jostick;
-        addRequirements(drive);
+    public DriveCommand(DriveTrainSubsystem driveTrain, CommandJoystick joytick1){
+        this.driveTrain = driveTrain;
+        this.joytick1 = joytick1;
+        addRequirements(driveTrain);
     }
     @Override
     public void initialize() {
@@ -23,18 +23,21 @@ public class DriveCommand extends Command{
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-      double speed = -joytick1.getRawAxis(1) * 0.6;
-      double turn = joytick1.getRawAxis(4) * 0.3;
+      double leftDrive = joytick1.getRawAxis(1);
+      double rightDrive = joytick1.getRawAxis(5);
+      driveTrain.driveTeleop(leftDrive, rightDrive);
+      // double speed = -joytick1.getRawAxis(1) * 0.6;
+      // double turn = joytick1.getRawAxis(4) * 0.3;
       // double left = speed + turn;
       // double right = speed - turn;
       // double rightDrive = joytick1.getRawAxis(5);
       // if(Math.abs(leftDrive) < 0.2){leftDrive = 0;}
       // if(Math.abs(rightDrive) < 0.2){rightDrive = 0;}
-      if (Universals.autonomousActive == true) {
-        driveTrain_subsystem.driveTeleopPeriodic(0.4, 0);
-      } else {
-      driveTrain_subsystem.driveTeleopPeriodic(speed, turn);
-      }
+      // if (Universals.autonomousActive == true) {
+      //   driveTrain_subsystem.driveTeleopPeriodic(0.4, 0);
+      // } else {
+      // driveTrain_subsystem.driveTeleopPeriodic(speed, turn);
+      // }
     }
   
     // Called once the command ends or is interrupted.
