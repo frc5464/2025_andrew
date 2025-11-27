@@ -14,7 +14,7 @@ import frc.robot.commands.ShooterCommand;
 
 public class CommandFactory {
     private final DriveCommand driveCommand = new DriveCommand(null, null);
-    private final ReverseDriveCommand reverseDriveCommand = new ReverseDriveCommand(null);
+    private final ReverseDriveCommand reverseDriveCommand = new ReverseDriveCommand(null, null);
     private final ReverseDriveModeCommand reverseDriveModeCommand = new ReverseDriveModeCommand();
     private final IntakeCommand intakeCommand = new IntakeCommand(null);
     private final ShooterCommand shooterCommand = new ShooterCommand(null);
