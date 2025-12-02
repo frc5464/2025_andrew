@@ -20,9 +20,9 @@ public class DriveTrainSubsystem extends SubsystemBase{
     private final Field2d field = new Field2d();
 
     private SparkMax frontRight = new SparkMax(2, MotorType.kBrushless); 
-    private SparkMax frontLeft = new SparkMax(3, MotorType.kBrushless); 
-    private SparkMax backLeft = new SparkMax(4, MotorType.kBrushless); 
-    private SparkMax backRight = new SparkMax(9, MotorType.kBrushless); 
+    private SparkMax frontLeft = new SparkMax(6, MotorType.kBrushless); 
+    private SparkMax backLeft = new SparkMax(5, MotorType.kBrushless); 
+    private SparkMax backRight = new SparkMax(1, MotorType.kBrushless); 
     
     @Override
     public void periodic(){

@@ -7,7 +7,7 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem extends SubsystemBase {
-    // private SparkFlex popcornIntake = new SparkFlex(8, MotorType.kBrushless);
+    private SparkFlex popcornIntake = new SparkFlex(11, MotorType.kBrushless);
 
     public void intakePopcorn(double leftTrigger){
         if (leftTrigger > 0.5) {
