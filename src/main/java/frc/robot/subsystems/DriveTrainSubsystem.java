@@ -17,7 +17,7 @@ import frc.robot.OI.OperatorInterface;
 public class DriveTrainSubsystem extends SubsystemBase{
     // private DifferentialDrive tank;
     PIDController drivePID;
-    private final Field2d field = new Field2d();
+    // private final Field2d field = new Field2d();
 
     private SparkMax frontRight = new SparkMax(2, MotorType.kBrushless); 
     private SparkMax frontLeft = new SparkMax(6, MotorType.kBrushless); 
@@ -62,7 +62,7 @@ public class DriveTrainSubsystem extends SubsystemBase{
     // drivePID = new PIDController(kp, ki, kd);
     // leftRelativeEncoder = frontLeft.getEncoder();
     // rightRelativeEncoder = frontRight.getEncoder();
-    SmartDashboard.putData("field", field);
+    // SmartDashboard.putData("field", field);
     // if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.POSE.ordinal())
     // {
     //   SmartDashboard.putData("Field", field);
