@@ -13,10 +13,12 @@ public class ShooterSubsystem extends SubsystemBase{
 
     public void shootPopcorn(double rightTrigger){
         if(rightTrigger > 0.5){
-            // shootPopcorn.set(1);
+            backShot.set(1);
+            frontShot.set(1);
         }
         else{
-            // shootPopcorn.set(0);
+            backShot.set(0);
+            frontShot.set(0);
         }
     }
 

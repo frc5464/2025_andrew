@@ -11,10 +11,10 @@ public class IntakeSubsystem extends SubsystemBase {
 
     public void intakePopcorn(double leftTrigger){
         if (leftTrigger > 0.5) {
-            // popcornIntake.set(1);
+            popcornIntake.set(1);
         }
         else{
-            // popcornIntake.set(0);
+            popcornIntake.set(0);
         }
     }
 }
