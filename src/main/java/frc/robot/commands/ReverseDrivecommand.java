@@ -21,11 +21,11 @@ public class ReverseDriveCommand extends Command {
 
     @Override
     public void execute(){
-        double revleftDrive = joystick.getRawAxis(1);
-        double revrightDrive = joystick.getRawAxis(5);
-        if(Universals.reverseMode == true){
-            drive.reverseDrive(revleftDrive, revrightDrive);
-        }
+        // double revleftDrive = joystick.getRawAxis(1);
+        // double revrightDrive = joystick.getRawAxis(5);
+        // if(Universals.reverseMode == true){
+            // drive.reverseDrive(revleftDrive, revrightDrive);
+        // }
     }
 
     @Override

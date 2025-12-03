@@ -14,14 +14,14 @@ import frc.robot.commands.ShooterCommand;
 
 public class CommandFactory {
     private final DriveCommand driveCommand = new DriveCommand(null, null);
-    private final ReverseDriveCommand reverseDriveCommand = new ReverseDriveCommand(null, null);
-    private final ReverseDriveModeCommand reverseDriveModeCommand = new ReverseDriveModeCommand();
+    // private final ReverseDriveCommand reverseDriveCommand = new ReverseDriveCommand(null, null);
+    // private final ReverseDriveModeCommand reverseDriveModeCommand = new ReverseDriveModeCommand();
     private final IntakeCommand intakeCommand = new IntakeCommand(null);
     private final ShooterCommand shooterCommand = new ShooterCommand(null);
     private final ButterIntakeCommand butterIntakeCommand = new ButterIntakeCommand(null);
     private final ButterOuttakeCommand butterOuttakeCommand = new ButterOuttakeCommand(null);
     private final ButterTiltCommand butterTiltCommand = new ButterTiltCommand(null);
-    private final AllignToAprilTagCommand allignToAprilTagCommand = new AllignToAprilTagCommand(null, null);
+    // private final AllignToAprilTagCommand allignToAprilTagCommand = new AllignToAprilTagCommand(null, null);
 
     public CommandFactory(){
 
@@ -31,13 +31,13 @@ public class CommandFactory {
        return driveCommand;
     }
 
-    public ReverseDriveCommand getReverseDriveCommand(){
-       return reverseDriveCommand;
-    }
+    // public ReverseDriveCommand getReverseDriveCommand(){
+    //    return reverseDriveCommand;
+    // }
 
-    public ReverseDriveModeCommand getReverseDriveModeCommand(){
-        return reverseDriveModeCommand;
-    }
+    // public ReverseDriveModeCommand getReverseDriveModeCommand(){
+    //     return reverseDriveModeCommand;
+    // }
 
     public IntakeCommand getIntakeCommand(){
         return intakeCommand;
@@ -59,7 +59,7 @@ public class CommandFactory {
         return butterTiltCommand;
     }
 
-    public AllignToAprilTagCommand getAllignToAprilTagCommand(){
-        return allignToAprilTagCommand;
-    }
+    // public AllignToAprilTagCommand getAllignToAprilTagCommand(){
+    //     return allignToAprilTagCommand;
+    // }
 }

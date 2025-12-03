@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private SubsystemManager subsystemManager;
   private CommandFactory commandFactory;
-  private Universals universals;
+  // private Universals universals;
   private final RobotContainer m_robotContainer;
 
   // private final DriveTrainSubsystem Drive = new DriveTrainSubsystem();
@@ -47,7 +47,7 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
 
     subsystemManager = new SubsystemManager();
-    commandFactory = new CommandFactory();
+    // commandFactory = new CommandFactory();
     
 
     OperatorInterface.create(subsystemManager, commandFactory);
@@ -87,7 +87,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.schedule();
     }
 
-    Universals.autonomousActive = true;
+    // Universals.autonomousActive = true;
   }
 
   /** This function is called periodically during autonomous. */
@@ -104,7 +104,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
 
-    Universals.autonomousActive = false;
+    // Universals.autonomousActive = false;
   }
 
   /** This function is called periodically during operator control. */

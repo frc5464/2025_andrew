@@ -16,7 +16,7 @@ public class ShooterCommand extends Command{
 
     @Override
     public void execute(){
-        shooter_subsystem.shootPopcorn(.5);
+        shooter_subsystem.shootPopcorn(1);
     }
 
     @Override

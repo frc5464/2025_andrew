@@ -11,7 +11,7 @@ public class SubsystemManager {
     private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
     private final ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
     private final ButterClawSubsystem butterClawSubsystem = new ButterClawSubsystem();
-    private final VisionSubsystem visionSubsystem = new VisionSubsystem();
+    // private final VisionSubsystem visionSubsystem = new VisionSubsystem();
     public SubsystemManager() {
 
     }
@@ -32,7 +32,7 @@ public class SubsystemManager {
         return butterClawSubsystem;
     }
 
-    public VisionSubsystem getVisionSubsystem(){
-        return visionSubsystem;
-    }
+    // public VisionSubsystem getVisionSubsystem(){
+    //     return visionSubsystem;
+    // }
 }

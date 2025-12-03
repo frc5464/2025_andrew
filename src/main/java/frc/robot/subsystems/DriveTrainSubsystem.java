@@ -74,10 +74,10 @@ public class DriveTrainSubsystem extends SubsystemBase{
     // }
 
     public void driveTeleop(double leftStick, double rightStick){
-        frontRight.set(-rightStick/2);
-        frontLeft.set(leftStick/2);
-        backRight.set(-rightStick/2);
-        backLeft.set(leftStick/2);
+        frontRight.set(rightStick/2);
+        frontLeft.set(-leftStick/2);
+        backRight.set(rightStick/2);
+        backLeft.set(-leftStick/2);
     }
     // public void driveTeleopPeriodic(double driveStick, double turnStick){
     //     // driveStick = -joy1.getRawAxis(1)*0.6;
@@ -103,9 +103,9 @@ public class DriveTrainSubsystem extends SubsystemBase{
     //     // frontRight.set(-right);
     //     // backRight.set(-right);
     // }
-    public void reverseDrive(double revLeft, double revRight){
-        driveTeleop(-revLeft, -revRight);
-    }
+    // public void reverseDrive(double revLeft, double revRight){
+    //     driveTeleop(-revLeft, -revRight);
+    // }
 
 
     public void stop(){

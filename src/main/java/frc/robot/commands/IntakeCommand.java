@@ -19,7 +19,7 @@ public class IntakeCommand extends Command{
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intake_subsystem.intakePopcorn(0.5);
+    intake_subsystem.intakePopcorn(1);
   }
 
   // Called once the command ends or is interrupted.

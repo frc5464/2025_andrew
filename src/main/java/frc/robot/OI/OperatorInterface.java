@@ -34,8 +34,8 @@ public class OperatorInterface {
         
         //driver controller
         
-        driver.axisGreaterThan(3,0.2).whileTrue(new IntakeCommand(intake));
-        driver.axisGreaterThan(4, 0.2).whileTrue(new ShooterCommand(shooter));
+        driver.axisGreaterThan(2,0.2).whileTrue(new IntakeCommand(intake));
+        driver.axisGreaterThan(3, 0.2).whileTrue(new ShooterCommand(shooter));
         // driver.button(2).onTrue(new ReverseDriveModeCommand());
         // drive.setDefaultCommand(new ReverseDriveCommand(drive, driver));
         drive.setDefaultCommand(new DriveCommand(drive, driver));
