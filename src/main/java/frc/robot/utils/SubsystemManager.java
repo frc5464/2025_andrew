@@ -42,6 +42,6 @@ public class SubsystemManager {
     // An example command will be run in autonomous
     // return AutosCommand.exampleAuto(m_exampleSubsystem);
 
-    return AutosCommand.autonomojohnathon(driveSubsystem);
+    return AutosCommand.autonomojohnathon(driveSubsystem, shooterSubsystem);
   }
 }

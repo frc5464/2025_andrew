@@ -6,6 +6,7 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 
@@ -17,10 +18,26 @@ public final class AutosCommand {
       new ExampleCommand(subsystem));
   }
 
-  public static Command autonomojohnathon(DriveTrainSubsystem drivetrain){
+  public static Command autonomojohnathon(DriveTrainSubsystem drivetrain, ShooterSubsystem shooter){
     return Commands.sequence(
-      new DriveForwardCommand(drivetrain, 5)
-
+      new DriveForwardCommand(drivetrain, 5),
+      new ShooterCommand(shooter),
+      new TurnLeftCommand(drivetrain, 5)
+    );
+  }
+  public static Command autonomoth(DriveTrainSubsystem drivetrain){
+    return Commands.sequence(
+      new DriveBackwardCommand(drivetrain, 5)
+    );
+  }
+  public static Command autonomojanette(DriveTrainSubsystem drivetrain){
+    return Commands.sequence(
+      new TurnLeftCommand(drivetrain, 5)
+    );
+  }
+  public static Command autonomohumuhumunukunukuapuaa(DriveTrainSubsystem drivetrain){
+    return Commands.sequence(
+      new TurnRightCommand(drivetrain, 5)
     );
   }
 
