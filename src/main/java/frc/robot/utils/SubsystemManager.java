@@ -1,5 +1,7 @@
 package frc.robot.utils;
 
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.commands.AutosCommand;
 import frc.robot.subsystems.ButterClawSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -35,4 +37,11 @@ public class SubsystemManager {
     // public VisionSubsystem getVisionSubsystem(){
     //     return visionSubsystem;
     // }
+    
+  public Command getAutonomousCommand() {
+    // An example command will be run in autonomous
+    // return AutosCommand.exampleAuto(m_exampleSubsystem);
+
+    return AutosCommand.autonomojohnathon(driveSubsystem);
+  }
 }
