@@ -25,7 +25,12 @@ public class DriveCommand extends Command{
     public void execute() {
       double leftDrive = joytick1.getRawAxis(1);
       double rightDrive = joytick1.getRawAxis(5);
-      driveTrain.driveTeleop(leftDrive, rightDrive);
+      
+
+      if(Universals.reverseMode == false){
+        driveTrain.driveTeleop(leftDrive, rightDrive);
+      }
+      else{driveTrain.driveTeleop(-leftDrive, -rightDrive);}
       // double speed = -joytick1.getRawAxis(1) * 0.6;
       // double turn = joytick1.getRawAxis(4) * 0.3;
       // double left = speed + turn;

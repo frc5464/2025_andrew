@@ -8,7 +8,7 @@ import frc.robot.utils.Universals;
 public class ReverseDriveModeCommand extends Command{
     @Override
     public void initialize() {
-        Universals.reverseMode = true;
+        Universals.reverseMode = !Universals.reverseMode;
     }
     
     @Override
@@ -18,8 +18,8 @@ public class ReverseDriveModeCommand extends Command{
   
     @Override
     public void end(boolean interrupted) {
-      Universals.reverseMode = false;
-      // System.out.println("reverseDriveModeCommand_finished");
+      
+      System.out.println("reverseDriveModeCommand_finished");
 
     }
   

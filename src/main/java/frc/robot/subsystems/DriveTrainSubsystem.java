@@ -51,7 +51,7 @@ public class DriveTrainSubsystem extends SubsystemBase{
     public double frontleftrotations;
 
     //maximum drive sspeed (0 to 1.0)
-    double maxspeed = 1;
+    double maxspeed = 0.6;
     double rampRate = 0.2;
 
 
@@ -74,10 +74,10 @@ public class DriveTrainSubsystem extends SubsystemBase{
     // }
 
     public void driveTeleop(double leftStick, double rightStick){
-        frontRight.set(rightStick/2);
-        frontLeft.set(-leftStick/2);
-        backRight.set(rightStick/2);
-        backLeft.set(-leftStick/2);
+        frontRight.set(rightStick*maxspeed);
+        frontLeft.set(-leftStick*maxspeed);
+        backRight.set(rightStick*maxspeed);
+        backLeft.set(-leftStick*maxspeed);
     }
     // public void driveTeleopPeriodic(double driveStick, double turnStick){
     //     // driveStick = -joy1.getRawAxis(1)*0.6;
