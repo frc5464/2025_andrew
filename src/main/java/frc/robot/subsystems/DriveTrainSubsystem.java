@@ -75,9 +75,9 @@ public class DriveTrainSubsystem extends SubsystemBase{
 
     public void driveTeleop(double leftStick, double rightStick){
         frontRight.set(rightStick*maxspeed);
-        frontLeft.set(-leftStick*maxspeed);
+        frontLeft.set(leftStick*maxspeed);
         backRight.set(rightStick*maxspeed);
-        backLeft.set(-leftStick*maxspeed);
+        backLeft.set(leftStick*maxspeed);
     }
     // public void driveTeleopPeriodic(double driveStick, double turnStick){
     //     // driveStick = -joy1.getRawAxis(1)*0.6;

@@ -2,14 +2,17 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class AutoShooterCommand extends Command{
     private final ShooterSubsystem shooter_subsystem;
+    private final DriveTrainSubsystem driveTrain;
     private final double time;
     private final Timer timer = new Timer();
 
-    public AutoShooterCommand(ShooterSubsystem shoot, double m_time){
+    public AutoShooterCommand(DriveTrainSubsystem drive, ShooterSubsystem shoot, double m_time){
+        driveTrain = drive;
         shooter_subsystem = shoot;
         time = m_time;
     }
@@ -22,6 +25,8 @@ public class AutoShooterCommand extends Command{
     @Override
     public void execute(){
         shooter_subsystem.shootPopcorn(1);
+        // driveTrain.driveTeleop(1, 1);
+        // driveTrain.driveTeleop(-1, -1);
     }
 
     @Override
