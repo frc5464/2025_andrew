@@ -21,8 +21,8 @@ public final class AutosCommand {
   public static Command autonomojohnathon(DriveTrainSubsystem drivetrain, ShooterSubsystem shooter){
     return Commands.sequence(
       new DriveForwardCommand(drivetrain, 5),
-      new ShooterCommand(shooter),
-      new TurnLeftCommand(drivetrain, 5)
+      new AutoShooterCommand(shooter, 1),
+      new TurnLeftCommand(drivetrain, 3)
     );
   }
   public static Command autonomoth(DriveTrainSubsystem drivetrain){
@@ -30,16 +30,17 @@ public final class AutosCommand {
       new DriveBackwardCommand(drivetrain, 5)
     );
   }
-  public static Command autonomojanette(DriveTrainSubsystem drivetrain){
-    return Commands.sequence(
-      new TurnLeftCommand(drivetrain, 5)
-    );
-  }
-  public static Command autonomohumuhumunukunukuapuaa(DriveTrainSubsystem drivetrain){
-    return Commands.sequence(
-      new TurnRightCommand(drivetrain, 5)
-    );
-  }
+  // public static Command autonomojanette(DriveTrainSubsystem drivetrain){
+  //   return Commands.sequence(
+  //     new TurnLeftCommand(drivetrain, 5)
+  //   );
+  // }
+
+  // public static Command autonomohumuhumunukunukuapuaa(DriveTrainSubsystem drivetrain){
+  //   return Commands.sequence(
+  //     new TurnRightCommand(drivetrain, 5)
+  //   );
+  // }
 
   private AutosCommand() {
     throw new UnsupportedOperationException("This is a utility class!");

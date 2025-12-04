@@ -16,7 +16,7 @@ public class AutoShooterCommand extends Command{
 
     @Override
     public void initialize(){
-
+        timer.restart();
     }
 
     @Override
@@ -26,11 +26,15 @@ public class AutoShooterCommand extends Command{
 
     @Override
     public void end(boolean interrupted){
+        timer.stop();
         shooter_subsystem.shootPopcorn(0);
     }
 
     @Override
     public boolean isFinished() {
+        if(timer.get() >= time){
+            return true;
+        }
         return false;
     }
 
