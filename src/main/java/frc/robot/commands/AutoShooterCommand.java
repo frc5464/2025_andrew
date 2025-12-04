@@ -5,8 +5,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class AutoShooterCommand extends Command{
-     private final ShooterSubsystem shooter_subsystem;
-     private final double time;
+    private final ShooterSubsystem shooter_subsystem;
+    private final double time;
     private final Timer timer = new Timer();
 
     public AutoShooterCommand(ShooterSubsystem shoot, double m_time){

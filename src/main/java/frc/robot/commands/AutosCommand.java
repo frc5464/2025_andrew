@@ -21,8 +21,10 @@ public final class AutosCommand {
   public static Command autonomojohnathon(DriveTrainSubsystem drivetrain, ShooterSubsystem shooter){
     return Commands.sequence(
       new DriveForwardCommand(drivetrain, 5),
-      new AutoShooterCommand(shooter, 1),
-      new TurnLeftCommand(drivetrain, 3)
+      new DriveBackwardCommand(drivetrain, .5),
+
+      new AutoShooterCommand(drivetrain, shooter, 1)
+      // new TurnLeftCommand(drivetrain, 3)
     );
   }
   public static Command autonomoth(DriveTrainSubsystem drivetrain){
