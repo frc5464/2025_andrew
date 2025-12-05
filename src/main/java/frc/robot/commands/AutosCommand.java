@@ -20,11 +20,19 @@ public final class AutosCommand {
 
   public static Command autonomojohnathon(DriveTrainSubsystem drivetrain, ShooterSubsystem shooter){
     return Commands.sequence(
-      new DriveForwardCommand(drivetrain, 5),
+      new DriveForwardCommand(drivetrain, 3.25),
       new DriveBackwardCommand(drivetrain, .5),
-
-      new AutoShooterCommand(drivetrain, shooter, 1)
-      // new TurnLeftCommand(drivetrain, 3)
+      new AutoShooterCommand(drivetrain, shooter, 3)
+      // new DriveForwardCommand(drivetrain, .5),
+      // new DriveBackwardCommand(drivetrain, 0.5),
+      // new AutoShooterCommand(drivetrain, shooter, 1),
+      // new DriveForwardCommand(drivetrain, .5),
+      // new DriveBackwardCommand(drivetrain, 0.5),
+      // new AutoShooterCommand(drivetrain, shooter, 1),
+      // new DriveForwardCommand(drivetrain, .5),
+      // new DriveBackwardCommand(drivetrain, 0.5),
+      // new AutoShooterCommand(drivetrain, shooter, 1)
+      // new TurnLeftCommand(drivetrain, 2)
     );
   }
   public static Command autonomoth(DriveTrainSubsystem drivetrain){

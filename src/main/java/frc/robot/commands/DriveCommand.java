@@ -1,5 +1,6 @@
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.RobotState;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -27,10 +28,13 @@ public class DriveCommand extends Command{
       double rightDrive = joytick1.getRawAxis(5);
       
 
-      if(Universals.reverseMode == true){
-        driveTrain.driveTeleop(-leftDrive, -rightDrive);
+      // if(Universals.reverseMode == true){
+      //   driveTrain.driveTeleop(-leftDrive, -rightDrive);
+      // }
+      if(RobotState.isTeleop()){
+        driveTrain.driveTeleop(leftDrive, rightDrive);
       }
-      else{driveTrain.driveTeleop(leftDrive, rightDrive);}
+      
       // double speed = -joytick1.getRawAxis(1) * 0.6;
       // double turn = joytick1.getRawAxis(4) * 0.3;
       // double left = speed + turn;
